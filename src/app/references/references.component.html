@@ -1,0 +1,10 @@
+<h1>References</h1>
+
+<ul *ngIf="brews">
+    <!--//If brews has been assigned data from API-->
+    <li *ngFor="let brew of brews">
+        <p class="name">{{ brew.name}}</p>
+        <p class="country">{{ brew.country}}</p>
+        <a href="{{ brew.website_url }}" class="site">site</a>
+    </li>
+</ul>

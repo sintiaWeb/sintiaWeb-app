@@ -1,0 +1,30 @@
+<h1>Welcome to Sintia's Corner</h1>
+<div>This website will showcase the utilization of angular8 in developing a front end UI that connects to API services. </div>
+<div class="play-container">
+    <p>In this example, we are wiring a service method to the home.component by injecting a private member to it so that we can simply invoke it on this page. Inside the component view we are binding the value of the component private member and we are biding
+        the service method click event to a span tag. </p>
+    <p>You clicked <span (click)="countClick()" this> {{ clickCounter }} times</span></p>
+</div>
+
+<div class="play-container">
+    <p>In this example, we are Creating are double binding meaning we are writting to service class property and later we are displaying the overwritten property in a label. To do this we must include the import FormsModule @angular/forms into to app.module.ts
+        and add it to the import section</p>
+
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <strong>You said:</strong> {{ name }}
+
+</div>
+
+<div class="play-container" [style.background-color]="clickCounter > 4? 'yellow': 'lightgray'">
+    <p>In this example, we are formating this area with angular if else condition while looking a private member value in the controller, based ont he value, we are appying certalin styling in the parent div class. There are many ways to inject styling conditioning</p>
+
+
+    <ng-template [ngIf]="clickCounter > 4 " [ngIfElse]="none">
+        <p>The click counter <strong>IS GREATHER</strong> than 4. </p>
+    </ng-template>
+
+    <ng-template #none>
+        <p>The click counter <strong>IS LESS</strong> than 4. </p>
+    </ng-template>
+</div>
